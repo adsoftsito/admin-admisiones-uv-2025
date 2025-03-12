@@ -37,4 +37,18 @@ export class TestUvWebService {
   delete(id: string): Promise<void> {
     return this.testsRef.doc(id).delete();
   }
+
+  clearCollection(): void {
+    this.testsRef.get().subscribe(snapshot => {
+      const batch = this.db.firestore.batch();
+
+      snapshot.forEach(doc => {
+        batch.delete(doc.ref);
+      });
+
+      batch.commit()
+        .then(() => console.log('Todos los documentos han sido eliminados.'))
+        .catch(error => console.error('Error al eliminar documentos:', error));
+    });
+  }
 }
