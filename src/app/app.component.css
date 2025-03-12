@@ -1,0 +1,19 @@
+.container h2 {
+  text-align: center;
+  margin: 25px auto;
+}
+
+/* Personalizar la barra de navegación */
+.custom-navbar {
+  background-color: #28a745 !important; /* Verde Bootstrap */
+}
+
+/* Opcional: cambiar el color de los enlaces */
+.custom-navbar .nav-link {
+  color: white !important;
+  font-weight: bold;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #d4edda !important; /* Verde claro al pasar el mouse */
+}

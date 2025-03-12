@@ -1,0 +1,14 @@
+.submit-form {
+  margin: auto;
+}
+
+.form-container {
+  width: 50%; /* Aumenta el ancho al 50% */
+  margin: 0 auto; /* Centra el formulario en la pantalla */
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%; /* Reduce el ancho en pantallas pequeñas */
+  }
+}

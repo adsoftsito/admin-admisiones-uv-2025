@@ -1,0 +1,118 @@
+<div class="form-container">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <!-- Datos personales -->
+      <fieldset class="border p-3 mb-3">
+        <legend class="w-auto">Datos personales</legend>
+        <div class="form-group">
+          <label for="appPaterno">Apellido Paterno</label>
+          <input type="text" class="form-control" id="appPaterno" required [(ngModel)]="test.appPaterno"
+            name="appPaterno" />
+        </div>
+
+        <div class="form-group">
+          <label for="appMaterno">Apellido Materno</label>
+          <input class="form-control" id="appMaterno" required [(ngModel)]="test.appMaterno" name="appMaterno" />
+        </div>
+
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input class="form-control" id="nombre" required [(ngModel)]="test.nombre" name="nombre" />
+        </div>
+      </fieldset>
+
+      <!-- Información académica -->
+      <fieldset class="border p-3 mb-3">
+        <legend class="w-auto">Información académica</legend>
+
+        <div class="form-group">
+          <label for="programaInteres">Carrera de interés</label>
+          <select class="form-control" id="programaInteres" required [(ngModel)]="test.programaInteres"
+            name="programaInteres">
+            <option value="lae">Lic. en Administración de Empresas</option>
+            <option value="conta">Lic. en Contaduría</option>
+            <option value="gestion">Gestión y Dirección de Negocios</option>
+            <option value="isw">Ing. de Software</option>
+            <option value="ltio">Lic. en Tecnologías de la Información en las Org.</option>
+            <option value="cspol">Lic. en Ciencias Políticas y Gestión Pública</option>
+            <option value="other">Otro, especifique...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="otroPrograma">Otra carrera no listada</label>
+          <input class="form-control" id="otroPrograma" [(ngModel)]="test.otroPrograma" name="otroPrograma" />
+        </div>
+      </fieldset>
+
+      <!-- Bachillerato de procedencia -->
+      <fieldset class="border p-3 mb-3">
+        <legend class="w-auto">Bachillerato de procedencia</legend>
+
+        <div class="form-group">
+          <label for="bachilleratoProcedencia">Selecciona tu bachillerato</label>
+          <select class="form-control" id="bachilleratoProcedencia" required [(ngModel)]="test.bachilleratoProcedencia"
+            name="bachilleratoProcedencia">
+            <option value="cobaev06">Colegio Bachilleres 06 de Nogales</option>
+            <option value="cobaevmaltrata">Colegio Bachilleres Maltrata</option>
+            <option value="cobaevcordoba">Colegio Bachilleres Córdoba</option>
+            <option value="cetisrioblanco">CETIS de Río Blanco</option>
+            <option value="conaleporizaba">Conalep Orizaba</option>
+            <option value="cbtisixtac">CBTIS Ixtac</option>
+            <option value="cbtisfortin">CETIS Fortín</option>
+            <option value="cbtiscordoba">CBTIS Córdoba</option>
+            <option value="cbtischicola">CBTIS Chicola</option>
+            <option value="esbo">ESBO Orizaba</option>
+            <option value="colmexorizaba">Colegio México Orizaba</option>
+            <option value="esbao">ESBAO Córdoba</option>
+            <option value="prepaunivo">UNIVO Preparatoria</option>
+            <option value="angloorizaba">Colegio Anglo Francés Orizaba</option>
+            <option value="oxford">Colegio Oxford Córdoba</option>
+            <option value="ceico">CEICO Orizaba</option>
+            <option value="cpo">CPO Orizaba</option>
+            <option value="guillaumin">Guillaumin Preparatoria</option>
+            <option value="hispanoorizaba">Hispano Orizaba</option>
+            <option value="hispanocordoba">Hispano Córdoba</option>
+            <option value="eba">Escuela de Bachilleres América Cd. Mendoza</option>
+            <option value="other">Otro, especifique...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="otroBachillerato">Otro bachillerato no listado</label>
+          <input class="form-control" id="otroBachillerato" [(ngModel)]="test.otroBachillerato"
+            name="otroBachillerato" />
+        </div>
+      </fieldset>
+
+      <!-- Información de contacto -->
+      <fieldset class="border p-3 mb-3">
+        <legend class="w-auto">Información de contacto</legend>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input class="form-control" id="telefono" required [(ngModel)]="test.telefono" name="telefono" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input class="form-control" id="email" required [(ngModel)]="test.email" name="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="facebook">Facebook/Instagram</label>
+          <input class="form-control" id="facebook" required [(ngModel)]="test.facebook" name="facebook" />
+        </div>
+      </fieldset>
+
+      <!-- Botón de envío -->
+      <button (click)="saveTest()" class="btn btn-success w-100">Registrarme</button>
+    </div>
+
+    <!-- Mensaje de éxito -->
+    <div *ngIf="submitted" class="text-center mt-3">
+      <h4>Te has registrado exitosamente!</h4>
+      <h3>¡Felicidades!</h3>
+    </div>
+  </div>
+</div>
