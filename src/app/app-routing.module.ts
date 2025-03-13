@@ -7,8 +7,8 @@ import { StatisticsTestUvWebComponent } from './components/statistics-test-uv-we
 
 const routes: Routes = [
 //  { path: '', redirectTo: 'registrar', pathMatch: 'full' },
-  { path: 'consultar', component: TestsUvWebListComponent },
-  { path: 'estadisticas', component: StatisticsTestUvWebComponent}
+//  { path: 'consultar', component: TestsUvWebListComponent },
+//  { path: 'estadisticas', component: StatisticsTestUvWebComponent}
 //  { path: 'registrar', component: AddTestUvWebComponent }
 ];
 

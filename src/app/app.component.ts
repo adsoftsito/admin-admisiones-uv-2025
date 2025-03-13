@@ -38,7 +38,10 @@ export class AppComponent {
               duration: 3000,
               panelClass: ['snackbar-success'],
             });
-            window.location.reload();
+            
+            setTimeout(() => {
+              window.location.reload();
+            }, 3000);
           })
           .catch((error) => {
             this.snackBar.open(
