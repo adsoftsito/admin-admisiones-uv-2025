@@ -12,12 +12,14 @@ import { AddTestUvWebComponent } from './components/add-test-uv-web/add-test-uv-
 import { TestUvWebDetailsComponent } from './components/test-uv-web-details/test-uv-web-details.component';
 import { TestsUvWebListComponent } from './components/tests-uv-web-list/tests-uv-web-list.component';
 import { StatisticsTestUvWebComponent } from './components/statistics-test-uv-web/statistics-test-uv-web.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { MatTableModule } from '@angular/material/table';
     AddTestUvWebComponent,
     TestUvWebDetailsComponent,
     TestsUvWebListComponent,
-    StatisticsTestUvWebComponent
+    StatisticsTestUvWebComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { MatTableModule } from '@angular/material/table';
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

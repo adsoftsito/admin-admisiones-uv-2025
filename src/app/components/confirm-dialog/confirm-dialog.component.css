@@ -1,0 +1,50 @@
+/* Estilo para el título del diálogo */
+::ng-deep mat-dialog-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1976d2;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para el contenido del diálogo */
+::ng-deep mat-dialog-content {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para los botones en el pie del diálogo */
+::ng-deep mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Estilo para el botón "Cancelar" */
+::ng-deep mat-dialog-actions button:first-child {
+    background-color: #aaa8a8;
+    color: black;
+    border: none;
+
+    &:hover {
+        background-color: #9e9c9c;
+    }
+}
+
+/* Estilo para el botón "Eliminar" */
+::ng-deep mat-dialog-actions button:last-child {
+    background-color: #d32f2f;
+    color: black;
+    border: none;
+
+    &:hover {
+        background-color: #c62828;
+    }
+}
+
+/* Asegura que el diálogo tenga un margen adecuado */
+::ng-deep .mat-dialog-container {
+    padding: 20px;
+    max-width: 500px;
+    border-radius: 8px;
+}

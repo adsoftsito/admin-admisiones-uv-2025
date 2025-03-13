@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
- 
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/compat/firestore';
 
 import { Test } from '../models/test.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TestUvWebService {
   private dbPath = '/tests';
@@ -20,10 +22,12 @@ export class TestUvWebService {
     return this.testsRef;
   }
 
-  getByProgram(programaInteres : string): AngularFirestoreCollection<Test> {
+  getByProgram(programaInteres: string): AngularFirestoreCollection<Test> {
     //return this.db.collection(this.dbPath, ref => ref.where('programaInteres','==', programaInteres )).valueChanges()
     //return this.testsRef.('programaInteres','==', programaInteres)
-    return this.db.collection(this.dbPath, ref => ref.where('programaInteres', '==', programaInteres));
+    return this.db.collection(this.dbPath, (ref) =>
+      ref.where('programaInteres', '==', programaInteres)
+    );
   }
 
   create(tutorial: Test): any {
@@ -38,17 +42,32 @@ export class TestUvWebService {
     return this.testsRef.doc(id).delete();
   }
 
-  clearCollection(): void {
-    this.testsRef.get().subscribe(snapshot => {
-      const batch = this.db.firestore.batch();
+  clearCollection(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.testsRef.get().subscribe({
+        next: (snapshot) => {
+          const batch = this.db.firestore.batch();
 
-      snapshot.forEach(doc => {
-        batch.delete(doc.ref);
+          snapshot.forEach((doc) => {
+            batch.delete(doc.ref);
+          });
+
+          batch
+            .commit()
+            .then(() => {
+              console.log('Todos los documentos han sido eliminados.');
+              resolve();
+            })
+            .catch((error) => {
+              console.error('Error al eliminar documentos:', error);
+              reject(error);
+            });
+        },
+        error: (error) => {
+          console.error('Error al obtener documentos:', error);
+          reject(error);
+        },
       });
-
-      batch.commit()
-        .then(() => console.log('Todos los documentos han sido eliminados.'))
-        .catch(error => console.error('Error al eliminar documentos:', error));
     });
   }
 }

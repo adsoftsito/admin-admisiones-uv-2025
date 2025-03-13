@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./statistics-test-uv-web.component.css'],
 })
 export class StatisticsTestUvWebComponent implements OnInit {
-  displayedColumns: string[] = ['carrera', 'cantidad']; // Aquí defines las columnas que vas a mostrar
+  displayedColumns: string[] = ['carrera', 'cantidad'];
 
   careerCounts: Record<string, number> = {
     lae: 0,
