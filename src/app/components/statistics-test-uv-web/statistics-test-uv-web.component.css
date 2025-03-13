@@ -1,0 +1,49 @@
+/* Barra superior */
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #388e3c;
+    /* Color verde */
+    padding: 15px;
+    color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.dialog-title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.close-button {
+    color: white;
+}
+
+.dialog-body {
+    padding: 15px;
+}
+
+.table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    padding: 12px 15px;
+}
+
+.table th {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}

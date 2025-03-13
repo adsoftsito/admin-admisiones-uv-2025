@@ -1,17 +1,22 @@
+<!-- Botón para Ver Estadísticas -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <a class="text-primary text-decoration-none" (click)="openStatsDialog()">
+    <strong>📊 Ver estadísticas</strong>
+  </a>
+</div>
+
 <div class="list row">
   <div class="col-md-6">
-
     <div class="form-group">
-      <label for="description">Filtrar por Carrera </label>
+      <label for="description">Filtrar por Carrera</label>
       <select class="form-control" id="programaInteres" required [(ngModel)]="programaInteres" name="programaInteres"
         (change)="retrieveTestsByProgram()">
-        <option value="lae">Lic. en Administracion de Empresas</option>
-        <option value="conta">Lic. en Contaduria</option>
-        <option value="gestion">Gestion y direccion de negocios</option>
-        <option value="isw">Ing. de software</option>
-        <option value="ltio">Lic. Tecnologias de la Informacion en las Org.</option>
-        <option value="cspol">Lic. en Ciencias Politicas y Gestion Publica</option>
-
+        <option value="lae">Lic. en Administración de Empresas</option>
+        <option value="conta">Lic. en Contaduría</option>
+        <option value="gestion">Gestión y Dirección de Negocios</option>
+        <option value="isw">Ing. de Software</option>
+        <option value="ltio">Lic. Tecnologías de la Información en las Org.</option>
+        <option value="cspol">Lic. en Ciencias Políticas y Gestión Pública</option>
       </select>
     </div>
 
@@ -24,6 +29,7 @@
     </ul>
 
   </div>
+
   <div class="col-md-6">
     <div *ngIf="currentTest">
       <app-test-uv-web-details (refreshList)="refreshList()" [test]="currentTest"></app-test-uv-web-details>

@@ -11,20 +11,33 @@ import { AppComponent } from './app.component';
 import { AddTestUvWebComponent } from './components/add-test-uv-web/add-test-uv-web.component';
 import { TestUvWebDetailsComponent } from './components/test-uv-web-details/test-uv-web-details.component';
 import { TestsUvWebListComponent } from './components/tests-uv-web-list/tests-uv-web-list.component';
+import { StatisticsTestUvWebComponent } from './components/statistics-test-uv-web/statistics-test-uv-web.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTestUvWebComponent,
     TestUvWebDetailsComponent,
-    TestsUvWebListComponent
+    TestsUvWebListComponent,
+    StatisticsTestUvWebComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, // for firestore
+    AngularFirestoreModule,
+    BrowserAnimationsModule, // for firestore
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
