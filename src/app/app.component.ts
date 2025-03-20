@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TestUvWebService } from './services/test-uv-web.service';
+import { AdmisionUvWebService } from './services/admision-uv-web.service';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -14,7 +14,7 @@ export class AppComponent {
   showDeleteButton: boolean = false;
 
   constructor(
-    private readonly testService: TestUvWebService,
+    private readonly admisionService: AdmisionUvWebService,
     private readonly dialog: MatDialog,
     private readonly snackBar: MatSnackBar
   ) {}
@@ -31,7 +31,7 @@ export class AppComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.testService
+        this.admisionService
           .clearCollection()
           .then(() => {
             this.snackBar.open('Los documentos han sido eliminados correctamente.', 'Cerrar', {

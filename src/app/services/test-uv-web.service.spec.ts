@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TestUvWebService } from './test-uv-web.service';
+import { AdmisionUvWebService } from './admision-uv-web.service';
 
-describe('TestUvWebService', () => {
-  let service: TestUvWebService;
+describe('AdmisionWebService', () => {
+  let service: AdmisionUvWebService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TestUvWebService);
+    service = TestBed.inject(AdmisionUvWebService);
   });
 
   it('should be created', () => {

@@ -8,10 +8,10 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTestUvWebComponent } from './components/add-test-uv-web/add-test-uv-web.component';
-import { TestUvWebDetailsComponent } from './components/test-uv-web-details/test-uv-web-details.component';
-import { TestsUvWebListComponent } from './components/tests-uv-web-list/tests-uv-web-list.component';
-import { StatisticsTestUvWebComponent } from './components/statistics-test-uv-web/statistics-test-uv-web.component';
+import { AddAdmisionUvWebComponent } from './components/add-admision-uv-web/add-admision-uv-web.component';
+import { AdmisionUvWebDetailsComponent } from './components/admision-uv-web-details/admision-uv-web-details.component';
+import { AdmisionUvWebListComponent } from './components/admision-uv-web-list/admision-uv-web-list.component';
+import { StatisticsAdmisionUvWebComponent } from './components/statistics-admision-uv-web/statistics-admision-uv-web.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -24,10 +24,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
-    AddTestUvWebComponent,
-    TestUvWebDetailsComponent,
-    TestsUvWebListComponent,
-    StatisticsTestUvWebComponent,
+    AddAdmisionUvWebComponent,
+    AdmisionUvWebDetailsComponent,
+    AdmisionUvWebListComponent,
+    StatisticsAdmisionUvWebComponent,
     ConfirmDialogComponent
   ],
   imports: [

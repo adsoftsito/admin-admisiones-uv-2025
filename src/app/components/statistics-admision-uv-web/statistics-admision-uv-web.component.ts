@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { TestUvWebService } from 'src/app/services/test-uv-web.service';
+import { AdmisionUvWebService } from 'src/app/services/admision-uv-web.service';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-statistics-test-uv-web',
-  templateUrl: './statistics-test-uv-web.component.html',
-  styleUrls: ['./statistics-test-uv-web.component.css'],
+  selector: 'app-statistics-admision-uv-web',
+  templateUrl: './statistics-admision-uv-web.component.html',
+  styleUrls: ['./statistics-admision-uv-web.component.css'],
 })
-export class StatisticsTestUvWebComponent implements OnInit {
+export class StatisticsAdmisionUvWebComponent implements OnInit {
   displayedColumns: string[] = ['carrera', 'cantidad'];
 
   careerCounts: Record<string, number> = {
@@ -30,8 +30,8 @@ export class StatisticsTestUvWebComponent implements OnInit {
   };
 
   constructor(
-    public dialogRef: MatDialogRef<StatisticsTestUvWebComponent>,
-    private readonly testUvWebService: TestUvWebService
+    public dialogRef: MatDialogRef<StatisticsAdmisionUvWebComponent>,
+    private readonly admisionUvWebService: AdmisionUvWebService
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +39,7 @@ export class StatisticsTestUvWebComponent implements OnInit {
   }
 
   loadStatistics(): void {
-    this.testUvWebService
+    this.admisionUvWebService
       .getAll()
       .snapshotChanges()
       .pipe(map((changes) => changes.map((c) => c.payload.doc.data())))

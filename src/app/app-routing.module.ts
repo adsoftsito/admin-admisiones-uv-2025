@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TestsUvWebListComponent } from './components/tests-uv-web-list/tests-uv-web-list.component';
-import { AddTestUvWebComponent } from './components/add-test-uv-web/add-test-uv-web.component';
-import { StatisticsTestUvWebComponent } from './components/statistics-test-uv-web/statistics-test-uv-web.component';
+import { AdmisionUvWebListComponent } from './components/admision-uv-web-list/admision-uv-web-list.component';
+import { AddAdmisionUvWebComponent } from './components/add-admision-uv-web/add-admision-uv-web.component';
+import { StatisticsAdmisionUvWebComponent } from './components/statistics-admision-uv-web/statistics-admision-uv-web.component';
 
 const routes: Routes = [
 //  { path: '', redirectTo: 'registrar', pathMatch: 'full' },

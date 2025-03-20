@@ -1,7 +1,7 @@
-import { Test } from './test.model';
+import { Admision } from './admision.model';
 
-describe('Test', () => {
+describe('Admision', () => {
   it('should create an instance', () => {
-    expect(new Test()).toBeTruthy();
+    expect(new Admision()).toBeTruthy();
   });
 });

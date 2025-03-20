@@ -1,0 +1,43 @@
+<!-- Botón para Ver Estadísticas -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <a class="text-primary text-decoration-none" (click)="openStatsDialog()">
+    <strong>📊 Ver estadísticas</strong>
+  </a>
+</div>
+
+<div class="list row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="description">Filtrar por Carrera</label>
+      <select class="form-control" id="programaInteres" required [(ngModel)]="programaInteres" name="programaInteres"
+        (change)="retrieveAdmisionesByProgram()">
+        <option value="lae">Lic. en Administración de Empresas</option>
+        <option value="conta">Lic. en Contaduría</option>
+        <option value="gestion">Gestión y Dirección de Negocios</option>
+        <option value="isw">Ing. de Software</option>
+        <option value="ltio">Lic. Tecnologías de la Información en las Org.</option>
+        <option value="cspol">Lic. en Ciencias Políticas y Gestión Pública</option>
+      </select>
+    </div>
+
+    <h3>{{n}} estudiantes</h3>
+    <ul class="list-group">
+      <li class="list-group-item student-item" *ngFor="let admision of admisiones; let i = index"
+        [class.active]="i == currentIndex" (click)="setActiveAdmision(admision, i)">
+        {{i+1}} {{admision.appPaterno}}-{{admision.appMaterno}}, {{admision.nombre}}
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="col-md-6">
+    <div *ngIf="currentAdmision">
+      <app-admision-uv-web-details (refreshList)="refreshList()" [admision]="currentAdmision"></app-admision-uv-web-details>
+    </div>
+
+    <div *ngIf="!currentAdmision">
+      <br />
+      <p>Seleccione un estudiante ...</p>
+    </div>
+  </div>
+</div>

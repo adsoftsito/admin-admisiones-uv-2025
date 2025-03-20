@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StatisticsTestUvWebComponent } from './statistics-test-uv-web.component';
+import { StatisticsAdmisionUvWebComponent } from './statistics-admision-uv-web.component';
 
 describe('StatisticsTestUvWebComponent', () => {
-  let component: StatisticsTestUvWebComponent;
-  let fixture: ComponentFixture<StatisticsTestUvWebComponent>;
+  let component: StatisticsAdmisionUvWebComponent;
+  let fixture: ComponentFixture<StatisticsAdmisionUvWebComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [StatisticsTestUvWebComponent]
+      declarations: [StatisticsAdmisionUvWebComponent]
     });
-    fixture = TestBed.createComponent(StatisticsTestUvWebComponent);
+    fixture = TestBed.createComponent(StatisticsAdmisionUvWebComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
